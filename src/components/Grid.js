@@ -13,14 +13,16 @@ export default function Grid() {
     }
 
     let buttons = [];
+    let i = 0;
 
     grid.forEach(row => {
         row.forEach(colorIndex => {
             if (colorIndex >= 0) {
-                buttons.push(<Square color={settings.colors[colorIndex]}/>);
+                buttons.push(<Square color={settings.colors[colorIndex]} key={i}/>);
             } else {
-                buttons.push(<Square color="#d700d6"/>);
+                buttons.push(<Square color="#d700d6" key={i}/>);
             }
+            i++;
         })
     });
 
