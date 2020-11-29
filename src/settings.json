@@ -1,0 +1,12 @@
+{
+    "colors": [
+        "#f77d36",
+        "#1758b8",
+        "#45c8fe",
+        "#febb30",
+        "#6e75f8"
+    ],
+    "rows": 5,
+    "columns": 12,
+    "squareSize": "60px"
+}

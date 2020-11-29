@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Goldman&display=swap');
+
+body {
+    color: #dddddd;
+    background-color: #333333;
+    font-family: 'Goldman', cursive;
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+.game-grid {
+    display: grid;
+    margin-bottom: 30px;
+}
+
+.square {
+    border: none;
+    border-radius: 3px;
+    margin: 2px;
+    cursor: pointer;
+}
+
+.square:hover {
+    transition: 0.3s;
+    opacity: 0.8;
+}
+
+.restart-button {
+    font-family: inherit;
+    font-size: inherit;
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.bottom-section {
+    font-size: 1.1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
