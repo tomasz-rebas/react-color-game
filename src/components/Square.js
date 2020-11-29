@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { add } from '../actions';
+import { addToScore } from '../actions';
 
 export default function Square( { color } ) {
 
@@ -14,7 +14,7 @@ export default function Square( { color } ) {
         <div 
             style={squareStyle}
             className="square"
-            onClick={() => dispatch(add(3))}
+            onClick={() => dispatch(addToScore(3))}
         ></div>
     )
 }

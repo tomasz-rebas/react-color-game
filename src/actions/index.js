@@ -1,22 +1,18 @@
-// score
-
-export const add = (value) => {
+export const addToScore = (value) => {
     return {
-        type: 'ADD',
+        type: 'ADD_TO_SCORE',
         payload: value
     }
 }
 
-export const reset = () => {
+export const resetScore = () => {
     return {
-        type: 'RESET'
+        type: 'RESET_SCORE'
     }
 }
 
-// grid
-
-export const randomizeAll = () => {
+export const randomizeAllColors = () => {
     return {
-        type: 'RANDOMIZE_ALL'
+        type: 'RANDOMIZE_ALL_COLORS'
     }
 }
