@@ -3,7 +3,7 @@
 body {
     color: #dddddd;
     background-color: #333333;
-    font-family: 'Goldman', cursive;
+    font-family: 'Goldman', cursive, 'Calibri';
     display: flex;
     justify-content: center;
 }

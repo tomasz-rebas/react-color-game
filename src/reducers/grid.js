@@ -10,7 +10,11 @@ const initialGrid = randomizeColors(
 const gridReducer = (state = initialGrid, aciton) => {
     switch (aciton.type) {
         case 'RANDOMIZE_ALL':
-            return state; // TODO
+            return randomizeColors(
+                settings.rows,
+                settings.columns,
+                settings.colors.length
+            );
         default:
             return state;
     }

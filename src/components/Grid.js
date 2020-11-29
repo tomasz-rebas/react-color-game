@@ -14,15 +14,6 @@ export default function Grid() {
 
     let buttons = [];
 
-    // for (let i = 0; i < settings.rows * settings.columns; i++) {
-    //     const randomColor = settings.colors[Math.floor(Math.random() * settings.colors.length)];
-    //     buttons.push(<Square color={randomColor}/>);
-    // }
-
-    // for (let i = 0; i < grid.length; i++) {
-    //     buttons.push(<Square color={randomColor}/>);
-    // }
-
     grid.forEach(row => {
         row.forEach(colorIndex => {
             buttons.push(<Square color={settings.colors[colorIndex]}/>);
