@@ -16,3 +16,10 @@ export const randomizeAllColors = () => {
         type: 'RANDOMIZE_ALL_COLORS'
     }
 }
+
+export const overwriteGrid = (grid) => {
+    return {
+        type: 'OVERWRITE_GRID',
+        payload: grid
+    }
+}

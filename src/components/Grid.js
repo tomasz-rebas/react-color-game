@@ -16,7 +16,11 @@ export default function Grid() {
 
     grid.forEach(row => {
         row.forEach(colorIndex => {
-            buttons.push(<Square color={settings.colors[colorIndex]}/>);
+            if (colorIndex >= 0) {
+                buttons.push(<Square color={settings.colors[colorIndex]}/>);
+            } else {
+                buttons.push(<Square color="#d700d6"/>);
+            }
         })
     });
 
