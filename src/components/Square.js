@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { addToScore, overwriteGrid } from '../actions';
 import { useSelector } from 'react-redux';
 import findSequence from '../functions/findSequence';
+import replaceSquares from '../functions/replaceSquares';
 
 export default function Square( { color, rowIndex, columnIndex } ) {
 
@@ -21,6 +22,7 @@ export default function Square( { color, rowIndex, columnIndex } ) {
                 const { modifiedGrid, score } = findSequence(grid, rowIndex, columnIndex);
                 dispatch(addToScore(score));
                 dispatch(overwriteGrid(modifiedGrid));
+                dispatch(overwriteGrid(replaceSquares(modifiedGrid)));
             }}
         ></div>
     )
