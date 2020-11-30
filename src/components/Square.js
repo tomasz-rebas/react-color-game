@@ -23,13 +23,15 @@ export default function Square( { color, rowIndex, columnIndex } ) {
             className="square"
             onClick={() => {
                 const { modifiedGrid, score } = findSequence(grid, rowIndex, columnIndex);
-                dispatch(addToScore(score));
-                dispatch(overwriteGrid(modifiedGrid));
-                dispatch(disableButtons());
-                setTimeout(() => {   
-                    dispatch(overwriteGrid(replaceSquares(modifiedGrid, settings.colors.length)));
-                    dispatch(enableButtons());
-                }, 300);
+                if (score > 0) {
+                    dispatch(addToScore(score));
+                    dispatch(overwriteGrid(modifiedGrid));
+                    dispatch(disableButtons());
+                    setTimeout(() => {   
+                        dispatch(overwriteGrid(replaceSquares(modifiedGrid, settings.colors.length)));
+                        dispatch(enableButtons());
+                    }, 300);
+                }
             }}
         ></div>
     )
