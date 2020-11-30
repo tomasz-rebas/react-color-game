@@ -19,11 +19,7 @@ export default function findSequence (grid, rowRootIndex, columnRootIndex) {
         }
     }
 
-    // console.log(isNeighbourAlreadyAdded([rowRootIndex, columnRootIndex]));
-
     while (isLookingIdenticalNeighbours) {
-
-        console.log(identicalNeighbours);
 
         let didFindAnyIdenticalNeighbours = false;
 
@@ -85,14 +81,12 @@ export default function findSequence (grid, rowRootIndex, columnRootIndex) {
     }
 
     let modifiedGrid = grid;
-
-    identicalNeighbours.forEach(coordinates => {
-        modifiedGrid[coordinates[0]][coordinates[1]] = -1
-    });
-
     let score = 0;
 
     if (identicalNeighbours.length > 1) {
+        identicalNeighbours.forEach(coordinates => {
+            modifiedGrid[coordinates[0]][coordinates[1]] = -1
+        });
         score = identicalNeighbours.length;
     }
 
