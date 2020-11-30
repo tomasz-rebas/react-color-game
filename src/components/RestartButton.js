@@ -1,10 +1,15 @@
 import React from 'react';
 import { resetScore, randomizeAllColors } from '../actions';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function RestartButton() {
 
     const dispatch = useDispatch();
+    const pointerEvents = useSelector(state => state.pointerEvents);
+
+    const buttonStyle = {
+        pointerEvents: pointerEvents
+    }
 
     return (
         <button 
@@ -13,6 +18,7 @@ export default function RestartButton() {
                 dispatch(randomizeAllColors());
                 dispatch(resetScore());
             }}
+            style={buttonStyle}
         >
             Restart
         </button>
