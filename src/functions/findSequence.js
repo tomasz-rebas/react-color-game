@@ -2,12 +2,14 @@ export default function findSequence (grid, rowRootIndex, columnRootIndex) {
 
     const colorIndex = grid[rowRootIndex][columnRootIndex];
 
+    let score = 0;
+
     // let isTopElementIdentical = false;
     // let isRightElementIdentical = false;
     // let isBottomElementIdentical = false;
     // let isLeftElementIdentical = false;
 
-    return grid.map((row, rowIndex) => {
+    const modifiedGrid = grid.map((row, rowIndex) => {
         return row.map((value, columnIndex) => {
             if (
                 rowIndex === rowRootIndex - 1 && 
@@ -15,6 +17,7 @@ export default function findSequence (grid, rowRootIndex, columnRootIndex) {
                 value === colorIndex
             ) {
                 //isTopElementIdentical = true;
+                score++;
                 return -1;
             }
             else if (
@@ -23,6 +26,7 @@ export default function findSequence (grid, rowRootIndex, columnRootIndex) {
                 value === colorIndex
             ) {
                 //isRightElementIdentical = true;
+                score++;
                 return -1;
             }
             else if (
@@ -31,6 +35,7 @@ export default function findSequence (grid, rowRootIndex, columnRootIndex) {
                 value === colorIndex
             ) {
                 //isBottomElementIdentical = true;
+                score++;
                 return -1;
             }
             else if (
@@ -39,12 +44,14 @@ export default function findSequence (grid, rowRootIndex, columnRootIndex) {
                 value === colorIndex
             ) {
                 //isLeftElementIdentical = true;
+                score++;
                 return -1;
             }
             else if (
                 rowIndex === rowRootIndex && 
                 columnIndex === columnRootIndex
             ) {
+                score++;
                 return -1
             }
             else {
@@ -52,6 +59,11 @@ export default function findSequence (grid, rowRootIndex, columnRootIndex) {
             }
         })
     });
+
+    return {
+        modifiedGrid,
+        score
+    }
 
     // if (isTopElementIdentical) {
     //     return findSequence(modifiedGrid, rowRootIndex - 1, columnRootIndex, colorIndex)

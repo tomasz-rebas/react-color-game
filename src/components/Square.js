@@ -18,8 +18,9 @@ export default function Square( { color, rowIndex, columnIndex } ) {
             style={squareStyle}
             className="square"
             onClick={() => {
-                dispatch(addToScore(3));
-                dispatch(overwriteGrid(findSequence(grid, rowIndex, columnIndex)))
+                const { modifiedGrid, score } = findSequence(grid, rowIndex, columnIndex);
+                dispatch(addToScore(score));
+                dispatch(overwriteGrid(modifiedGrid));
             }}
         ></div>
     )
