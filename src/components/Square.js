@@ -4,7 +4,7 @@ import { addToScore, overwriteGrid } from '../actions';
 import { useSelector } from 'react-redux';
 import findSequence from '../functions/findSequence';
 
-export default function Square( { color } ) {
+export default function Square( { color, rowIndex, columnIndex } ) {
 
     const dispatch = useDispatch();
     const grid = useSelector(state => state.grid);
@@ -19,7 +19,7 @@ export default function Square( { color } ) {
             className="square"
             onClick={() => {
                 dispatch(addToScore(3));
-                dispatch(overwriteGrid(findSequence(grid, 1, 1)))
+                dispatch(overwriteGrid(findSequence(grid, rowIndex, columnIndex)))
             }}
         ></div>
     )

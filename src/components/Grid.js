@@ -15,13 +15,22 @@ export default function Grid() {
     let buttons = [];
     let i = 0;
 
-    grid.forEach(row => {
-        row.forEach(colorIndex => {
+    grid.forEach((row, rowIndex) => {
+        row.forEach((colorIndex, columnIndex) => {
+            let buttonColor;
             if (colorIndex >= 0) {
-                buttons.push(<Square color={settings.colors[colorIndex]} key={i}/>);
+                buttonColor = settings.colors[colorIndex];
             } else {
-                buttons.push(<Square color="#d700d6" key={i}/>);
+                buttonColor = '#d700d6';
             }
+            buttons.push(
+                <Square 
+                    color={buttonColor}
+                    key={i}
+                    rowIndex={rowIndex}
+                    columnIndex={columnIndex}
+                />
+            );
             i++;
         })
     });
