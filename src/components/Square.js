@@ -23,6 +23,9 @@ export default function Square( { color, rowIndex, columnIndex } ) {
                 const { modifiedGrid, score } = findSequence(grid, rowIndex, columnIndex);
                 dispatch(addToScore(score));
                 dispatch(overwriteGrid(modifiedGrid));
+                // setTimeout(() => {   
+                //     dispatch(overwriteGrid(replaceSquares(modifiedGrid, settings.colors.length)));
+                // }, 400);
                 dispatch(overwriteGrid(replaceSquares(modifiedGrid, settings.colors.length)));
             }}
         ></div>
