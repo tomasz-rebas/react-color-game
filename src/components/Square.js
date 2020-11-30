@@ -29,7 +29,7 @@ export default function Square( { color, rowIndex, columnIndex } ) {
                 setTimeout(() => {   
                     dispatch(overwriteGrid(replaceSquares(modifiedGrid, settings.colors.length)));
                     dispatch(enableButtons());
-                }, 500);
+                }, 300);
             }}
         ></div>
     )
