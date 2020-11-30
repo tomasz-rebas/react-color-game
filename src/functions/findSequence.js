@@ -31,7 +31,7 @@ export default function findSequence (grid, rowRootIndex, columnRootIndex) {
             const isNotOnLeftEdge = coordinates[1] > 0;
     
             if (isNotOnTopEdge) {
-                // isTopNeighbourIdentical
+                // Is the top neighbour identical?
                 if (grid[coordinates[0] - 1][coordinates[1]] === colorIndex) {
                     const newElement = [coordinates[0] - 1, coordinates[1]];
                     if (!isNeighbourAlreadyAdded(newElement)) {
@@ -42,7 +42,7 @@ export default function findSequence (grid, rowRootIndex, columnRootIndex) {
             }
     
             if (isNotOnRightEdge) {
-                // isRightNeighbourIdentical
+                // Is the right neighbour identical?
                 if (grid[coordinates[0]][coordinates[1] + 1] === colorIndex) {
                     const newElement = [coordinates[0], coordinates[1] + 1];
                     if (!isNeighbourAlreadyAdded(newElement)) {
@@ -53,7 +53,7 @@ export default function findSequence (grid, rowRootIndex, columnRootIndex) {
             }
     
             if (isNotOnBottomEdge) {
-                // isBottomNeighbourIdentical
+                // Is the bottom neighbour identical?
                 if (grid[coordinates[0] + 1][coordinates[1]] === colorIndex) {
                     const newElement = [coordinates[0] + 1, coordinates[1]];
                     if (!isNeighbourAlreadyAdded(newElement)) {
@@ -64,7 +64,7 @@ export default function findSequence (grid, rowRootIndex, columnRootIndex) {
             }
     
             if (isNotOnLeftEdge) {
-                // isLeftNeighbourIdentical
+                // Is the left neighbour identical?
                 if (grid[coordinates[0]][coordinates[1] - 1] === colorIndex) {
                     const newElement = [coordinates[0], coordinates[1] - 1];
                     if (!isNeighbourAlreadyAdded(newElement)) {

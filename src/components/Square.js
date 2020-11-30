@@ -25,7 +25,7 @@ export default function Square( { color, rowIndex, columnIndex } ) {
                 dispatch(overwriteGrid(modifiedGrid));
                 setTimeout(() => {   
                     dispatch(overwriteGrid(replaceSquares(modifiedGrid, settings.colors.length)));
-                }, 600);
+                }, 500);
                 //dispatch(overwriteGrid(replaceSquares(modifiedGrid, settings.colors.length)));
             }}
         ></div>
