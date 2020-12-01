@@ -1,3 +1,15 @@
+# Color Game
+
+This is a web game implemented with ReactJS and Redux.
+
+Remove groups of tiles of the same color by clicking one of them. To form a single group they need to adhere to each other from top, bottom or one of the sides.
+
+Each removed tile increases your score by 1.
+
+Removed tiles are replaced by the tiles above them (with random colors being generated at the top).
+
+A single tile cannot be removed.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
