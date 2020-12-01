@@ -8,5 +8,6 @@
     ],
     "rows": 8,
     "columns": 10,
-    "tileSize": "60px"
+    "tileMinSize": "30px",
+    "tileMaxSize": "60px"
 }

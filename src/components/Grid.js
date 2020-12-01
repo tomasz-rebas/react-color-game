@@ -8,8 +8,8 @@ export default function Grid() {
     const grid = useSelector(state => state.grid);
 
     const gridStyle = {
-        gridTemplateColumns: `repeat(${settings.columns}, ${settings.tileSize})`,
-        gridTemplateRows: `repeat(${settings.rows}, ${settings.tileSize})`
+        gridTemplateColumns: `repeat(${settings.columns}, minmax(${settings.tileMinSize}, ${settings.tileMaxSize})`,
+        gridTemplateRows: `repeat(${settings.rows}, minmax(${settings.tileMinSize}, ${settings.tileMaxSize})`
     }
 
     let buttons = [];
