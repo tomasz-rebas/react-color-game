@@ -1,14 +1,14 @@
-export default function replaceSquares (grid, colorCount) {
+export default function replaceTiles (grid, colorCount) {
 
     let newGrid = grid;
-    let searchingForEmptySquares = true;
+    let searchingForEmptyTiles = true;
 
-    while (searchingForEmptySquares) {
-        let isEmptySquareDetected = false;
+    while (searchingForEmptyTiles) {
+        let isEmptyTileDetected = false;
         newGrid.forEach((row, i) => {
             row.forEach((value, j) => {
                 if (value === -1) {
-                    isEmptySquareDetected = true;
+                    isEmptyTileDetected = true;
                     // if it's top row, generate new color
                     if (i === 0) {
                         newGrid[i][j] = Math.floor(Math.random() * colorCount);
@@ -21,8 +21,8 @@ export default function replaceSquares (grid, colorCount) {
                 }
             });
         });
-        if (!isEmptySquareDetected) {
-            searchingForEmptySquares = false;
+        if (!isEmptyTileDetected) {
+            searchingForEmptyTiles = false;
         }
     }
 

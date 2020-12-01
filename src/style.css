@@ -17,14 +17,14 @@ h1 {
     margin-bottom: 30px;
 }
 
-.square {
+.tile {
     border: none;
     border-radius: 3px;
     margin: 2px;
     cursor: pointer;
 }
 
-.square:hover {
+.tile:hover {
     transition: 0.3s;
     opacity: 0.8;
 }

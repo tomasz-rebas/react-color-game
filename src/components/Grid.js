@@ -1,5 +1,5 @@
 import React from 'react';
-import Square from './Square';
+import Tile from './Tile';
 import settings from '../settings.json';
 import { useSelector } from 'react-redux';
 
@@ -8,8 +8,8 @@ export default function Grid() {
     const grid = useSelector(state => state.grid);
 
     const gridStyle = {
-        gridTemplateColumns: `repeat(${settings.columns}, ${settings.squareSize})`,
-        gridTemplateRows: `repeat(${settings.rows}, ${settings.squareSize})`
+        gridTemplateColumns: `repeat(${settings.columns}, ${settings.tileSize})`,
+        gridTemplateRows: `repeat(${settings.rows}, ${settings.tileSize})`
     }
 
     let buttons = [];
@@ -24,7 +24,7 @@ export default function Grid() {
                 buttonColor = '#d700d6';
             }
             buttons.push(
-                <Square 
+                <Tile 
                     color={buttonColor}
                     key={i}
                     rowIndex={rowIndex}

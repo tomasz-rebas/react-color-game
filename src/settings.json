@@ -6,7 +6,7 @@
         "#febb30",
         "#6e75f8"
     ],
-    "rows": 5,
-    "columns": 12,
-    "squareSize": "60px"
+    "rows": 8,
+    "columns": 10,
+    "tileSize": "60px"
 }
