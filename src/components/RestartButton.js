@@ -1,6 +1,8 @@
 import React from 'react';
-import { resetScore, randomizeAllColors } from '../actions';
+import { resetScore, overwriteGrid } from '../actions';
 import { useDispatch, useSelector } from 'react-redux';
+import randomizeColors from '../functions/randomizeColors';
+import settings from '../settings.json';
 
 export default function RestartButton() {
 
@@ -15,7 +17,14 @@ export default function RestartButton() {
         <button 
             className="restart-button"
             onClick={() => {
-                dispatch(randomizeAllColors());
+                dispatch(
+                    overwriteGrid(
+                        randomizeColors(
+                            settings.rows,
+                            settings.columns,
+                            settings.colors.length
+                        )
+                ));
                 dispatch(resetScore());
             }}
             style={buttonStyle}

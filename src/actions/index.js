@@ -11,12 +11,6 @@ export const resetScore = () => {
     }
 }
 
-export const randomizeAllColors = () => {
-    return {
-        type: 'RANDOMIZE_ALL_COLORS'
-    }
-}
-
 export const overwriteGrid = (grid) => {
     return {
         type: 'OVERWRITE_GRID',
