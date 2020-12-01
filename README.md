@@ -10,6 +10,8 @@ Removed tiles are replaced by the tiles above them (with random colors being gen
 
 A single tile cannot be removed.
 
+![Game Preview](https://i.imgur.com/wFd7eew.gif)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
