@@ -6,8 +6,8 @@
         "#febb30",
         "#6e75f8"
     ],
-    "rows": 2,
-    "columns": 2,
+    "rows": 8,
+    "columns": 10,
     "tileMinSize": "30px",
     "tileMaxSize": "60px"
 }
