@@ -21,7 +21,7 @@ export default function Grid() {
             if (colorIndex >= 0) {
                 buttonColor = settings.colors[colorIndex];
             } else {
-                buttonColor = '#d700d6';
+                buttonColor = settings.colorSelected;
             }
             buttons.push(
                 <Tile 
