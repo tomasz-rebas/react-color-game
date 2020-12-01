@@ -12,6 +12,8 @@ A single tile cannot be removed.
 
 ![Game Preview](https://i.imgur.com/wFd7eew.gif)
 
+You can move modify some parameters in `settings.json` file, like grid's color palette, dimensions and tile size.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
