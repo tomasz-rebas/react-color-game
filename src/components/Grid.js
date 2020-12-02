@@ -1,15 +1,16 @@
 import React from 'react';
 import Tile from './Tile';
-import settings from '../settings.json';
 import { useSelector } from 'react-redux';
 
 export default function Grid() {
 
     const grid = useSelector(state => state.grid);
+    const colors = useSelector(state => state.colors);
+    const colorSelected = useSelector(state => state.colorSelected);
 
     const gridStyle = {
-        gridTemplateColumns: `repeat(${settings.columns}, minmax(${settings.tileMinSize}, ${settings.tileMaxSize})`,
-        gridTemplateRows: `repeat(${settings.rows}, minmax(${settings.tileMinSize}, ${settings.tileMaxSize})`
+        gridTemplateColumns: `repeat(${grid[0].length}, minmax(30px, 60px)`,
+        gridTemplateRows: `repeat(${grid.length}, minmax(30px, 60px)`
     }
 
     let buttons = [];
@@ -19,9 +20,9 @@ export default function Grid() {
         row.forEach((colorIndex, columnIndex) => {
             let buttonColor;
             if (colorIndex >= 0) {
-                buttonColor = settings.colors[colorIndex];
+                buttonColor = colors[colorIndex];
             } else {
-                buttonColor = settings.colorSelected;
+                buttonColor = colorSelected;
             }
             buttons.push(
                 <Tile 

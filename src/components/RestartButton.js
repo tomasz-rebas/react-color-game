@@ -2,12 +2,14 @@ import React from 'react';
 import { resetScore, overwriteGrid } from '../actions';
 import { useDispatch, useSelector } from 'react-redux';
 import randomizeColors from '../functions/randomizeColors';
-import settings from '../settings.json';
 
 export default function RestartButton() {
 
     const dispatch = useDispatch();
+
     const pointerEvents = useSelector(state => state.pointerEvents);
+    const grid = useSelector(state => state.grid);
+    const colors = useSelector(state => state.colors);
 
     const buttonStyle = {
         pointerEvents: pointerEvents
@@ -20,9 +22,9 @@ export default function RestartButton() {
                 dispatch(
                     overwriteGrid(
                         randomizeColors(
-                            settings.rows,
-                            settings.columns,
-                            settings.colors.length
+                            grid.length,
+                            grid[0].length,
+                            colors.length
                         )
                 ));
                 dispatch(resetScore());

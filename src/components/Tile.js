@@ -4,13 +4,14 @@ import { addToScore, overwriteGrid, disableButtons, enableButtons } from '../act
 import { useSelector } from 'react-redux';
 import findSequence from '../functions/findSequence';
 import replaceTiles from '../functions/replaceTiles';
-import settings from '../settings.json';
 
 export default function Tile( { color, rowIndex, columnIndex } ) {
 
     const dispatch = useDispatch();
+
     const grid = useSelector(state => state.grid);
     const pointerEvents = useSelector(state => state.pointerEvents);
+    const colors = useSelector(state => state.colors);
 
     const tileStyle = {
         backgroundColor: color,
@@ -28,7 +29,7 @@ export default function Tile( { color, rowIndex, columnIndex } ) {
                     dispatch(overwriteGrid(modifiedGrid));
                     dispatch(disableButtons());
                     setTimeout(() => {   
-                        dispatch(overwriteGrid(replaceTiles(modifiedGrid, settings.colors.length)));
+                        dispatch(overwriteGrid(replaceTiles(modifiedGrid, colors.length)));
                         dispatch(enableButtons());
                     }, 300);
                 }

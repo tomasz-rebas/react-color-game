@@ -6,7 +6,9 @@ import { combineReducers } from 'redux';
 const rootReducer = combineReducers({
     score: scoreReducer,
     grid: gridReducer,
-    pointerEvents: pointerEventsReducer
+    pointerEvents: pointerEventsReducer,
+    colors: (state = {}) => state,
+    colorSelected: (state = {}) => state
 })
 
 export default rootReducer;
