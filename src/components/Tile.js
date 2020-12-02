@@ -1,9 +1,9 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { addToScore, overwriteGrid, disableButtons, enableButtons } from '../actions';
+import { addToScore, disableButtons, enableButtons, findSequence, replaceEmptyTiles } from '../actions';
 import { useSelector } from 'react-redux';
-import findSequence from '../functions/findSequence';
-import replaceTiles from '../functions/replaceTiles';
+import countEmptyTiles from '../functions/countEmptyTiles';
+import getRandomColorIndexes from '../functions/getRandomColorIndexes';
 
 export default function Tile( { color, rowIndex, columnIndex } ) {
 
@@ -23,13 +23,19 @@ export default function Tile( { color, rowIndex, columnIndex } ) {
             style={tileStyle}
             className="tile"
             onClick={() => {
-                const { modifiedGrid, score } = findSequence(grid, rowIndex, columnIndex);
-                if (score > 0) {
-                    dispatch(addToScore(score));
-                    dispatch(overwriteGrid(modifiedGrid));
+                
+                dispatch(findSequence({
+                    rowRootIndex: rowIndex,
+                    columnRootIndex: columnIndex
+                }));
+
+                const newScorePoints = countEmptyTiles(grid);
+
+                if (newScorePoints > 1) {     
+                    dispatch(addToScore(newScorePoints));
                     dispatch(disableButtons());
                     setTimeout(() => {   
-                        dispatch(overwriteGrid(replaceTiles(modifiedGrid, colors.length)));
+                        dispatch(replaceEmptyTiles(getRandomColorIndexes(colors.length, newScorePoints)));
                         dispatch(enableButtons());
                     }, 300);
                 }

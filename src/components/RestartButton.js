@@ -1,7 +1,7 @@
 import React from 'react';
-import { resetScore, overwriteGrid } from '../actions';
+import { resetScore, overwriteAllTiles } from '../actions';
 import { useDispatch, useSelector } from 'react-redux';
-import randomizeColors from '../functions/randomizeColors';
+import getRandomColorIndexes from '../functions/getRandomColorIndexes';
 
 export default function RestartButton() {
 
@@ -20,12 +20,8 @@ export default function RestartButton() {
             className="restart-button"
             onClick={() => {
                 dispatch(
-                    overwriteGrid(
-                        randomizeColors(
-                            grid.length,
-                            grid[0].length,
-                            colors.length
-                        )
+                    overwriteAllTiles(
+                        getRandomColorIndexes(colors.length, grid[0].length * grid.length)
                 ));
                 dispatch(resetScore());
             }}
