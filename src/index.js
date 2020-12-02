@@ -7,8 +7,8 @@ import { Provider } from 'react-redux';
 import getRandomColorIndexes from './functions/getRandomColorIndexes';
 
 // initial state values
-const colors = ['#e67300', '#1758b8', '#45c8fe', '#febb30', '#6e75f8'];
-const colorSelected = '#d700d6';
+const colors = ['#e67300', '#0066ff', '#45c8fe', '#febb30', '#9933ff', '#00cc66', '#ff66cc'];
+const colorSelected = '#660033';
 const pointerEvents = 'auto';
 const score = 0;
 
