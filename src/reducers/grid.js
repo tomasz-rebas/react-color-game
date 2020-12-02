@@ -126,14 +126,14 @@ const gridReducer = (state = [], action) => {
 
             while (searchingForEmptyTiles) {
                 let isEmptyTileDetected = false;
-                newGrid.forEach((row, i) => {
-                    row.forEach((value, j) => {
-                        if (value === -1) {
+                for (let i = 0; i < newGrid.length; i++) {
+                    for (let j = 0; j < newGrid[i].length; j++) {
+                        if (newGrid[i][j] === -1) {
                             isEmptyTileDetected = true;
                             // if it's top row, generate new color
                             if (i === 0) {
                                 newGrid[i][j] = colorIndexes[currentColorIndex];
-                                currentColorIndex ++;
+                                currentColorIndex++;
                             } else {
                                 // replace with the value from the previous row
                                 const temp = newGrid[i][j];
@@ -141,8 +141,25 @@ const gridReducer = (state = [], action) => {
                                 newGrid[i - 1][j] = temp;
                             }
                         }
-                    });
-                });
+                    }
+                }
+                // newGrid.forEach((row, i) => {
+                //     row.forEach((value, j) => {
+                //         if (value === -1) {
+                //             isEmptyTileDetected = true;
+                //             // if it's top row, generate new color
+                //             if (i === 0) {
+                //                 newGrid[i][j] = colorIndexes[currentColorIndex];
+                //                 currentColorIndex ++;
+                //             } else {
+                //                 // replace with the value from the previous row
+                //                 const temp = newGrid[i][j];
+                //                 newGrid[i][j] = newGrid[i - 1][j];
+                //                 newGrid[i - 1][j] = temp;
+                //             }
+                //         }
+                //     });
+                // });
                 if (!isEmptyTileDetected) {
                     searchingForEmptyTiles = false;
                 }
