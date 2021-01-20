@@ -1,6 +1,8 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { addToScore, disableButtons, enableButtons, findSequence, replaceEmptyTiles } from '../actions';
+import { findSequence, replaceEmptyTiles } from '../actions/grid';
+import { addToScore } from '../actions/score';
+import { disableButtons, enableButtons } from '../actions/pointerEvents';
 import { useSelector } from 'react-redux';
 import countEmptyTiles from '../functions/countEmptyTiles';
 import getRandomColorIndexes from '../functions/getRandomColorIndexes';

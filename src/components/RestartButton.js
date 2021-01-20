@@ -1,5 +1,6 @@
 import React from 'react';
-import { resetScore, overwriteAllTiles } from '../actions';
+import { resetScore } from '../actions/score';
+import { overwriteAllTiles } from '../actions/grid';
 import { useDispatch, useSelector } from 'react-redux';
 import getRandomColorIndexes from '../functions/getRandomColorIndexes';
 
